@@ -1,5 +1,6 @@
 #import-module PSHTML
-New-PolarisGetRoute -Path "/" -Scriptblock {
+
+New-PolarisGetRoute -Path "/kubernetes" -Scriptblock {
     $Response.SetContentType('text/html')
     $res = html {
         head -Content {
@@ -22,24 +23,30 @@ New-PolarisGetRoute -Path "/" -Scriptblock {
             }
             header -Content {
                 div -Class "logo" -Content {
-                    img -src "https://csb43183080e3c5x4b05x802.blob.core.windows.net/k8s/xJPrlOfA_400x400.jpg" -alt "ExpertsLive EU"
+                    img -src "assets/expertslive-logo.jpg" -alt "ExpertsLive EU" -Class "header_logo" -width "100" -height "100"
                 }
-
                 h1 -Content {
-                    "Hello,
-                    <br />
-                    Expertslive EU"
+                    "kubernetes"
                 }
             }
             div -Class "responsive" -Content {
-                div -Class "gallery" -Content {
-                    img -src "https://csb43183080e3c5x4b05x802.blob.core.windows.net/k8s/Kubernetes_container_engine.png" alt="Kubernetes" -width "400" -height "200"
-                }
-                div -Class "gallery" -Content {
-                    img -src "https://csb43183080e3c5x4b05x802.blob.core.windows.net/k8s/1_lUNmBw_oyS2ADWqZs4DLOA.png" alt="Kubernetes" -width "400" -height "200"
-                }
-                div -Class "gallery" -Content {
-                    img -src "https://csb43183080e3c5x4b05x802.blob.core.windows.net/k8s/core.jpg" alt="Kubernetes" -width "400" -height "200"
+               h3 -Content "a list of resources"
+               ul -class "resources" -Content {
+                    li -class "resourceitem" -Content {
+                        a -Class "resourcelink" -href "https://kubernetes.io/" -Content "Kubernetes"
+                    }
+                    li -class "resourceitem" -Content {
+                        a  -Class "resourcelink" -href "https://azure.microsoft.com/en-us/services/kubernetes-service/" -Content "AKS (Azure kubernetes service)"
+                    }
+                    li -class "resourceitem" -Content {
+                        a  -Class "resourcelink" -href "https://github.com/kelseyhightower/kubernetes-the-hard-way" -Content "Kubernetes the hard way"
+                    }
+                    li -class "resourceitem" -Content {
+                        a  -Class "resourcelink" -href "https://azure.microsoft.com/en-us/resources/videos/the-illustrated-children-s-guide-to-kubernetes/" -Content "The illustrated children's guide to kubernetes"
+                    }
+                    li -class "resourceitem" -Content {
+                        a  -Class "resourcelink" -href "https://awesome-docker.netlify.com/" -Content "Awesome docker"
+                    }
                 }
             }
             div -Class "clearfix"

@@ -22,6 +22,9 @@ New-PolarisGetRoute -Path "/powershell" -Scriptblock {
                 }
             }
             header -Content {
+                div -Class "logo" -Content {
+                    img -src "assets/expertslive-logo.jpg" -alt "ExpertsLive EU" -Class "header_logo" -width "100" -height "100"
+                }
                 h1 -Content {
                     "powershell"
                 }
@@ -29,7 +32,7 @@ New-PolarisGetRoute -Path "/powershell" -Scriptblock {
             div -Class "responsive" -Content {
                h3 -Content "a list of resources"
                ul -class "resources" -Content {
-                li -class "resourceitem" -Content {
+                    li -class "resourceitem" -Content {
                         a -Class "resourcelink" -href "https://github.com/PowerShell/PowerShell" -Content "PowerShell Core"
                     }
                     li -class "resourceitem" -Content {
@@ -41,7 +44,6 @@ New-PolarisGetRoute -Path "/powershell" -Scriptblock {
                    li -class "resourceitem" -Content {
                     a -Class "resourcelink" -href "https://github.com/Stephanevg/PSHTML" -Content "PSHTML"
                     }
-
                }
             }
             div -Class "clearfix"

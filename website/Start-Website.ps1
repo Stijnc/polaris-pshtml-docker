@@ -1,5 +1,5 @@
-Import-Module -Name Polaris -Verbose
-Import-Module -Name PSHTML -Verbose
+Import-Module ./Polaris/0.1.0/Polaris -Verbose
+Import-Module ./PSHTML/PSHTML.psd1 -Verbose
 
 New-PolarisStaticRoute -RoutePath "/assets" -FolderPath "./assets"
 New-PolarisStaticRoute -RoutePath "/routes" -FolderPath "./routes"

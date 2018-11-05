@@ -89,3 +89,6 @@ footer {
 footer p h3{
     text-align: center;
 }
+.header_logo {
+    border-radius: 50%
+}

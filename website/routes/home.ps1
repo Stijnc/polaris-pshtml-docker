@@ -1,6 +1,5 @@
 #import-module PSHTML
-
-New-PolarisGetRoute -Path "/kubernetes" -Scriptblock {
+New-PolarisGetRoute -Path "/" -Scriptblock {
     $Response.SetContentType('text/html')
     $res = html {
         head -Content {
@@ -22,33 +21,26 @@ New-PolarisGetRoute -Path "/kubernetes" -Scriptblock {
                 }
             }
             header -Content {
+                div -Class "logo" -Content {
+                    img -src "assets/expertslive-logo.jpg" -alt "ExpertsLive EU" -Class "header_logo" -width "100" -height "100"
+                }
+
                 h1 -Content {
-                    "kubernetes"
+                    "Hi there,
+                    <br />
+                    how are you today!?"
                 }
             }
             div -Class "responsive" -Content {
-               h3 -Content "a list of resources"
-               ul -class "resources" -Content {
-                li -class "resourceitem" -Content {
-                    a -Class "resourcelink" -href "https://kubernetes.io/" -Content "Kubernetes"
+                div -Class "gallery" -Content {
+                    img -src "assets/kubernetes-logo.png" alt="Kubernetes" -width "400" -height "200"
                 }
-                li -class "resourceitem" -Content {
-                    a  -Class "resourcelink" -href "https://azure.microsoft.com/en-us/services/kubernetes-service/" -Content "AKS (Azure kubernetes service)"
+                div -Class "gallery" -Content {
+                    img -src "assets/docker-logo.png" alt="Docker" -width "400" -height "200"
                 }
-               li -class "resourceitem" -Content {
-                   a  -Class "resourcelink" -href "https://github.com/kelseyhightower/kubernetes-the-hard-way" -Content "Kubernetes the hard way"
-               }
-               li -class "resourceitem" -Content {
-                a  -Class "resourcelink" -href "https://azure.microsoft.com/en-us/resources/videos/the-illustrated-children-s-guide-to-kubernetes/" -Content "The illustrated children's guide to kubernetes"
+                div -Class "gallery" -Content {
+                    img -src "assets/powershell-core.jpg" alt="PowerShell" -width "400" -height "200"
                 }
-                li -class "resourceitem" -Content {
-                    a  -Class "resourcelink" -href "https://github.com/Stephanevg/PSHTML" -Content "Children's guide to kubernetes"
-                    }
-           }
-
-           h3 -Content {
-               "Does it end here? no, this is only the beginning!  (think security, management, ...)"
-           }
             }
             div -Class "clearfix"
             footer -Content {
